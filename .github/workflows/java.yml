@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest  # Use the Windows runner
+    runs-on: windows-latest  # Windows runner
 
     steps:
       # Checkout the repository
@@ -22,8 +22,7 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: '21'
-          #distribution: 'adoptopenjdk'  # Specify the distribution
-          architecture: x64
+          architecture: x64  # Optional, but good for specifying the architecture
 
       # Compile Java code (without Maven)
       - name: Compile Java code
