@@ -1,0 +1,2 @@
+# js_cal_github_action
+this is a js_based_calculator_automating_it_using_actions
