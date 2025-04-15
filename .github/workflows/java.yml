@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest  # Change from ubuntu-latest to windows-latest
+    runs-on: windows-latest  # Use the Windows runner
 
     steps:
       # Checkout the repository
@@ -22,6 +22,8 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: '21'
+          distribution: 'adoptopenjdk'  # Specify the distribution
+          architecture: x64
 
       # Compile Java code (without Maven)
       - name: Compile Java code
@@ -31,4 +33,4 @@ jobs:
       # Run tests
       - name: Run JUnit tests
         run: |
-          java -cp CalculatorTest
+          java -cp .:junit-4.13.2.jar:hamcrest-core-1.3.jar org.junit.runner.JUnitCore CalculatorTest
