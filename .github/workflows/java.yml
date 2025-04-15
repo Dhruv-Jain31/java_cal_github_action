@@ -22,6 +22,7 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: '21'
+          distribution: 'zulu'  # Specify the distribution
           architecture: x64  # Optional, but good for specifying the architecture
 
       # Compile Java code (without Maven)
